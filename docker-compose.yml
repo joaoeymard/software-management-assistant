@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  front:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - /usr/src/project/node_modules
+      - ./:/usr/src/project/
+    ports:
+      - 3000:3000
+    command: nodemon start
